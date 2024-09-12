@@ -31,6 +31,14 @@ pip install scipy
 ```
 > we don't need `requirements.txt`
 
+## Channel Mapping
+1. Go to 🤗 [Artifact Removal Transformer](https://huggingface.co/spaces/CNElab/ArtifactRemovalTransformer), complete the process of **1.Channel Mapping** and Download `XXX_mapping_result.json`.
+
+2. Modify the mapping file name in `main.py`
+```python
+mapping_name = './sampledata/sample_mapping_result.json'
+```
+
 ## Inference
 1. Check parameters in `main.py`
 ```sh
