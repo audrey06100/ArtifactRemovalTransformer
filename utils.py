@@ -249,6 +249,6 @@ def reconstruct(model_name, total, outputfile, batch_cnt):
     data = glue_data(total)
     second2 = time.time()
 
-    outputname = '{}_{:02d}'.format(outputfile[:-4], batch_cnt+1)
+    outputname = '{}-{}'.format(outputfile[:-4], batch_cnt+1)
     print("Using", model_name,"model to reconstruct", outputname, "has been success in", second2 - second1, "sec(s)")
     return data

@@ -11,7 +11,7 @@ if __name__ == '__main__':
     output_name = 'outputsample.csv'
 
     # read the mapping result
-    mapping_name = './sampledata/sample_mappingresult.json'
+    mapping_name = './sampledata/sample_mapping_result.json'
     batch_num, mapping_result = utils.read_mapping_result(mapping_name)
 
     for i in range(batch_num):
