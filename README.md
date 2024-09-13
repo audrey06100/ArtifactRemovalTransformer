@@ -34,7 +34,7 @@ pip install scipy
 ## Channel Mapping
 1. Go to 🤗 [Artifact Removal Transformer](https://huggingface.co/spaces/CNElab/ArtifactRemovalTransformer).
 
-2. Follow the guide to adjust **both** your location file and data.
+2. Follow the guide to adjust **both** your channel location file and data.
 
 2. Complete the process of **1.Channel Mapping** and Download `XXX_mapping_result.json`.
 
