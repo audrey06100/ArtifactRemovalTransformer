@@ -198,7 +198,7 @@ def preprocessing(filename, samplerate, mapping_result):
     # read data
     signal = read_train_data(filename)
     channel_num = signal.shape[0]
-    # reorder data
+    # channel mapping
     signal = reorder_data(signal, mapping_result)
     #print(signal.shape)
     # resample
@@ -222,7 +222,7 @@ def postprocessing(data, samplerate, outputfile, mapping_result, batch_cnt, chan
 
     # resample to original sample rate
     data = resample(data, 256, samplerate)
-    # restore original order
+    # reverse channel mapping
     all_data = np.zeros((channel_num, data.shape[1])) if batch_cnt==0 else read_train_data(outputfile)
     all_data = restore_order(data, all_data, mapping_result)
     # save data

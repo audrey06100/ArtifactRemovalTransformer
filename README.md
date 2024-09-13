@@ -5,7 +5,7 @@ This study introduces the Artifact Removal Transformer (ART), a novel EEG denois
 
 
 > **ART: An Artifact Removal Transformer for Reconstructing Noise-Free Multi-Channel EEG Signals** [[arXiv paper](#)]<br>
-> Chun-Hsiang Chuang, Kong-Yi Chang, Chih-Sheng Huang, Anne-Mei Bessasa<br>
+> Chun-Hsiang Chuang, Kong-Yi Chang, Chih-Sheng Huang, Anne-Mei Bessas<br>
 > [CNElab](https://sites.google.com/view/chchuang/)<br>
 
 # Basic Usage (For Users Familiar with the Process)
@@ -32,9 +32,13 @@ pip install scipy
 > we don't need `requirements.txt`
 
 ## Channel Mapping
-1. Go to 🤗 [Artifact Removal Transformer](https://huggingface.co/spaces/CNElab/ArtifactRemovalTransformer), complete the process of **1.Channel Mapping** and Download `XXX_mapping_result.json`.
+1. Go to 🤗 [Artifact Removal Transformer](https://huggingface.co/spaces/CNElab/ArtifactRemovalTransformer).
 
-2. Modify the mapping file name in `main.py`
+2. Follow the guide to adjust **both** your location file and data.
+
+2. Complete the process of **1.Channel Mapping** and Download `XXX_mapping_result.json`.
+
+3. Modify the mapping file name in `main.py`
 ```python
 mapping_name = './sampledata/sample_mapping_result.json'
 ```
