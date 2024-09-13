@@ -175,7 +175,7 @@ def decode_data(data, std_num, mode=5):
 def read_mapping_result(filename):
     with open(filename) as jsonfile:
         data = json.load(jsonfile)
-    return data["batch"], data["mappingResult"]
+    return data["channelNum"], data["batch"], data["mappingResult"]
 
 
 def reorder_data(raw_data, mapping_result):
@@ -197,7 +197,7 @@ def preprocessing(filename, samplerate, mapping_result):
     
     # read data
     signal = read_train_data(filename)
-    channel_num = signal.shape[0]
+    #print(signal.shape)
     # channel mapping
     signal = reorder_data(signal, mapping_result)
     #print(signal.shape)
@@ -210,7 +210,7 @@ def preprocessing(filename, samplerate, mapping_result):
     # cutting data
     total = cut_data(signal)
 
-    return total, channel_num
+    return total
 
 def restore_order(data, all_data, mapping_result):
     for i, (indices, flag) in enumerate(zip(mapping_result["index"], mapping_result["isOriginalData"])):
