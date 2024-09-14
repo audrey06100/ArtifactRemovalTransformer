@@ -32,13 +32,13 @@ pip install scipy
 > we don't need `requirements.txt`
 
 ## Channel Mapping
-1. Go to 🤗 [Artifact Removal Transformer](https://huggingface.co/spaces/CNElab/ArtifactRemovalTransformer).
+1. Remove any reference, ECG, EOG, EMG, or other non-EEG channels from your data.
 
-2. Follow the guide to adjust **both** your channel location file and data.
+2. Go to 🤗 [Artifact Removal Transformer](https://huggingface.co/spaces/CNElab/ArtifactRemovalTransformer) and complete the process of **1.Channel Mapping**. For detailed instructions, please refer to the user guide.
 
-2. Complete the process of **1.Channel Mapping** and Download `XXX_mapping_result.json`.
+3. Download the `XXX_mapping_result.json` file.
 
-3. Modify the mapping file name in `main.py`
+4. Modify the mapping file name in `main.py`
 ```python
 mapping_name = './sampledata/sample_mapping_result.json'
 ```
