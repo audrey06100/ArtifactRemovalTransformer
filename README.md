@@ -36,7 +36,7 @@ pip install scipy
 
 2. Go to 🤗 [Artifact Removal Transformer](https://huggingface.co/spaces/CNElab/ArtifactRemovalTransformer) and complete the process of **1.Channel Mapping**. For detailed instructions, please refer to the user guide.
 
-3. Download the `XXX_mapping_result.json` file.
+3. After finishing the process, download the generated `XXX_mapping_result.json` file.
 
 4. Modify the mapping file name in `main.py`
 ```python
