@@ -175,7 +175,7 @@ def decode_data(data, std_num, mode=5):
 def read_mapping_result(filename):
     with open(filename) as jsonfile:
         data = json.load(jsonfile)
-    return data["channelNum"], data["batch"], data["mappingResult"]
+    return data["mappingResult"], data["channelNum"], data["batch"]
 
 
 def reorder_data(raw_data, mapping_result):
@@ -186,7 +186,7 @@ def reorder_data(raw_data, mapping_result):
         if flag == True:
             new_data[i, :] = raw_data[indices[0], :]
         elif indices[0] == None:
-              new_data[i, :] = zero_arr
+            new_data[i, :] = zero_arr
         else:
             data = [raw_data[idx, :] for idx in indices]
             new_data[i, :] = np.mean(data, axis=0)

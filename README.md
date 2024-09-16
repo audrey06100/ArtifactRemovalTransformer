@@ -32,7 +32,7 @@ pip install scipy
 > we don't need `requirements.txt`
 
 ## Channel Mapping
-1. Remove any reference, ECG, EOG, EMG, or other non-EEG channels from your data.
+1. Remove any reference, ECG, EOG, EMG, or other non-EEG channels from your data and channel location file.
 
 2. Go to 🤗 [Artifact Removal Transformer](https://huggingface.co/spaces/CNElab/ArtifactRemovalTransformer) and complete the process of **Step1. Channel Mapping**.<br>
 (For detailed instructions, please refer to the user guide.)

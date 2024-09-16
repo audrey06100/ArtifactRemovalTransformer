@@ -12,7 +12,7 @@ if __name__ == '__main__':
 
     # read the mapping result
     mapping_name = './sampledata/sample_mapping_result.json'
-    channel_num, batch_num, mapping_result = utils.read_mapping_result(mapping_name)
+    mapping_result, channel_num, batch_num = utils.read_mapping_result(mapping_name)
 
     for i in range(batch_num):
 
