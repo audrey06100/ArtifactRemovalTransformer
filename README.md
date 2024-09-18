@@ -34,7 +34,7 @@ pip install scipy
 ## Channel Mapping
 1. Remove any reference, ECG, EOG, EMG, or other non-EEG channels from your data and channel location file.
 
-2. Go to 🤗 [Artifact Removal Transformer](https://huggingface.co/spaces/CNElab/ArtifactRemovalTransformer) and complete the process of **Step1. Channel Mapping**.<br>
+2. Go to our [Hugging Face space](https://huggingface.co/spaces/CNElab/ArtifactRemovalTransformer) and complete the process of **Step1. Channel Mapping**.<br>
 (For detailed instructions, please refer to the user guide.)
 
 3. After finishing the process, download the generated `XXX_mapping_result.json` file.
