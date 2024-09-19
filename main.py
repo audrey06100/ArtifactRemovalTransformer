@@ -12,13 +12,13 @@ if __name__ == '__main__':
 
     # read the mapping result
     mapping_name = './sampledata/sample_mapping_result.json'
-    mapping_result, channel_num, batch_num = utils.read_mapping_result(mapping_name)
+    mapping_result, num_channel, num_group = utils.read_mapping_result(mapping_name)
 
-    for i in range(batch_num):
+    for i in range(num_group):
 
         # step1: Data preprocessing
         preprocess_data = utils.preprocessing(input_path+input_name, sample_rate, mapping_result[i])
         # step2: Signal reconstruction
         reconstructed_data = utils.reconstruct(modelname, preprocess_data, output_name, i)
         # step3: Data postprocessing
-        utils.postprocessing(reconstructed_data, sample_rate, output_path+output_name, mapping_result[i], i, channel_num)
+        utils.postprocessing(reconstructed_data, sample_rate, output_path+output_name, mapping_result[i], i, num_channel)

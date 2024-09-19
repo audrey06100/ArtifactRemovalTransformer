@@ -218,19 +218,19 @@ def restore_order(data, all_data, mapping_result):
             all_data[indices[0], :] = data[i, :]
     return all_data
 
-def postprocessing(data, samplerate, outputfile, mapping_result, batch_cnt, channel_num):
+def postprocessing(data, samplerate, outputfile, mapping_result, group_cnt, channel_num):
 
     # resample to original sample rate
     data = resample(data, 256, samplerate)
     # reverse channel mapping
-    all_data = np.zeros((channel_num, data.shape[1])) if batch_cnt==0 else read_train_data(outputfile)
+    all_data = np.zeros((channel_num, data.shape[1])) if group_cnt==0 else read_train_data(outputfile)
     all_data = restore_order(data, all_data, mapping_result)
     # save data
     save_data(all_data, outputfile)
 
 
 # model = tf.keras.models.load_model('./denoise_model/')
-def reconstruct(model_name, total, outputfile, batch_cnt):
+def reconstruct(model_name, total, outputfile, group_cnt):
     # -------------------decode_data---------------------------
     second1 = time.time()
     for i in range(total.shape[2]):
@@ -249,6 +249,6 @@ def reconstruct(model_name, total, outputfile, batch_cnt):
     data = glue_data(total)
     second2 = time.time()
 
-    outputname = '{}-{}'.format(outputfile[:-4], batch_cnt+1)
+    outputname = '{}-{}'.format(outputfile[:-4], group_cnt+1)
     print("Using", model_name,"model to reconstruct", outputname, "has been success in", second2 - second1, "sec(s)")
     return data
