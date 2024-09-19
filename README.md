@@ -32,27 +32,28 @@ pip install scipy
 # Usage Guide
 
 ## Data Specification
-
 - Your data must be a two-dimensional array (channels, timepoints) and should be converted into `.csv` format.
 - All reference, ECG, EOG, EMG, or other non-EEG channels must be removed from both your data and channel location file.
 
 ## Channel Mapping
+1. Go to our [Hugging Face space](https://huggingface.co/spaces/CNElab/ArtifactRemovalTransformer) and complete the process of **Step1. Channel Mapping**.
+    ![plot](./image/HF.png)<br>
+    (For detailed instructions, please refer to the user guide.)
+    <details>
+    <summary>Example</summary>
 
-1. Go to our [Hugging Face space](https://huggingface.co/spaces/CNElab/ArtifactRemovalTransformer) and complete the process of **Step1. Channel Mapping**.<br>
-(For detailed instructions, please refer to the user guide.)
-![plot](./image/HF.png)
+    ![plot](./image/HF_step1-1.png)<br>
+    ![plot](./image/HF_step1-2.png)<br>
+    ![plot](./image/HF_step1-3.png)<br>
+    ![plot](./image/HF_step1-4.png)<br>
+    </details>
 
 2. After finishing the process, download the generated `XXX_mapping_result.json` file.
-<details>
-<summary>Example</summary>
 
-![plot](./image/HF_step1-1.png)<br>
-![plot](./image/HF_step1-2.png)<br>
-![plot](./image/HF_step1-3.png)<br>
-![plot](./image/HF_step1-4.png)<br>
-
-</details>
-
+3. Modify the mapping file name in `main.py`
+```python
+mapping_name = './sampledata/sample_chanlocs_mapping_result.json'
+```
 
 ## Inference
 1. Check parameters in `main.py`
@@ -63,14 +64,11 @@ sample_rate = 256 # input data sample rate
 modelname = 'ART' # or 'ICUNet', 'ICUNet++', 'ICUNet_attn', 'ART'
 output_path = './sampledata/'
 output_name = 'outputsample.csv'
-
-mapping_name = './sampledata/sample_mapping_result.json'
 ```
 2. Run the code
 ```sh
 python .\main.py
 ```
-
 
 ### Batch processing
 For batch processing, wrap the code in `main.py` in a for loop.<br>

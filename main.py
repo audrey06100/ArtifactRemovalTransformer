@@ -11,7 +11,7 @@ if __name__ == '__main__':
     output_name = 'outputsample.csv'
 
     # read the mapping result
-    mapping_name = './sampledata/sample_mapping_result.json'
+    mapping_name = './sampledata/sample_chanlocs_mapping_result.json'
     mapping_result, num_channel, num_group = utils.read_mapping_result(mapping_name)
 
     for i in range(num_group):
